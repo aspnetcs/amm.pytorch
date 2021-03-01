@@ -1,0 +1,97 @@
+https://www.cnblogs.com/devilmaycry812839668/p/9279346.html
+Hello_BeautifulWorld
+Python3.5 源码安装 Ubuntu16.04环境
+安装源码编译所需的各种依赖库：（Ubuntu16.04环境下）
+
+sudo apt-get install zlib1g-dev libbz2-dev libssl-dev libncurses5-dev  libsqlite3-dev libreadline-dev tk-dev libgdbm-dev libdb-dev libpcap-dev xz-utils libexpat1-dev   liblzma-dev libffi-dev  libc6-dev
+
+ 
+
+配置安装位置   配置优化：
+
+./configure --prefix=/opt/python3.5  --enable-optimizations
+
+ 
+
+编译
+
+sudo make
+
+ 
+
+安装：
+
+sudo make install
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+独立的Python环境安装好以后，我们需要安装相应的计算库：
+
+ 
+
+sudo ./pip3 install mkl
+sudo ./pip3 install numpy
+sudo ./pip3 install scipy
+sudo ./pip3 install matplotlib
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+安装过程中需要注意的一个问题是 Python的安装目录一定是用户目录，不能是root用户权限，否则在安装过程中  site-package 不会安装在设置的目录下，而是会安装在    /home/devil/.local/lib/phthon3.5/site-package  中，这样的情况如果你的电脑中有多个Python3.5的话就会发生冲突。
+
+
+
+ 
+
+尝试该操作后发现并没有成功，这么操作以后 site-package 还是安装在  /home/devil/.local/lib/python3.5/site-package 下面。
+
+ 
+
+ 
+
+最后发现 $HOME 这个变量
+
+
+
+ 
+
+ 
+
+修改：
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+安装成功，查看：
+
+
+
+ 
+
+所有需要的都已经安装好。
+
+ 
